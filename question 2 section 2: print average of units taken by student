@@ -1,0 +1,42 @@
+import java.util.Scanner;
+ 
+public class Exercise12 {
+ 
+ public static void main(String[] args) {
+  // Create a Scanner object to read input from the user
+  Scanner in = new Scanner(System.in);
+   
+  // Prompt the user to input the first unit
+  System.out.print("Input first Unit ");
+  
+  // Read and store the first Unit
+  int unit1 = in.nextInt();
+   
+  // Prompt the user to input the second Unit
+  System.out.print("Input second Unit: ");
+  
+  // Read and store the second number
+  int unit2 = in.nextInt();
+   
+  // Prompt the user to input the third Unit
+  System.out.print("Input third Unit ");
+  
+  // Read and store the third Unit
+  int unit3 = in.nextInt();
+   
+  // Prompt the user to input the fourth Unit
+  System.out.print("Input fourth Unit ");
+  
+  // Read and store the fourth Unit
+  int unit4 = in.nextInt();
+  
+  // Prompt the user to input the fifth Unit
+  System.out.print("Enter fifth Unit: ");
+  
+  // Read and store the fifth Unit
+  int unit5 = in.nextInt();
+   
+  // Calculate and print the average of the five Units
+  System.out.println("Average of five Units is: " + (unit1 + unit2 + unit + unit4 + unit5) / 5);
+ }
+}
