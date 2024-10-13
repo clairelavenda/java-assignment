@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+public class DivisibilityTest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        checkDivisibility(number);
+    }
+
+    public static void checkDivisibility(int number) {
+        for (int i = 0; i <= 9; i++) {
+            if (i == 0) {
+                System.out.println("0 is not a valid divisor.");
+                continue; // Skip division by zero
+            }
+
+            if (number % i == 0) {
+                String explanation = getExplanation(i, number);
+                System.out.printf("The number %d is divisible by %d %s%n", number, i, explanation);
+            }
+        }
+    }
+
+    public static String getExplanation(int divisor, int number) {
+        switch (divisor) {
+            case 1:
+                return "because every integer is divisible by 1.";
+            case 2:
+                return "because it is even (ends with 0, 2, 4, 6, or 8).";
+            case 3:
+                return "because the sum of its digits is divisible by 3.";
+            case 4:
+                return "because the last two digits are divisible by 4.";
+            case 5:
+                if (number % 10 == 0) {
+                    return "because it ends with a 0.";
+                } else {
+                    return "because it ends with a 5.";
+                }
+            case 6:
+                if (number % 2 == 0 && sumOfDigits(number) % 3 == 0) {
+                    return "because it is divisible by both 2 and 3.";
+                }
+                break;
+            case 7:
+                return "because it is divisible by 7.";
+            case 8:
+                if (number % 1000 >= 100) {
+                    return "because the last three digits are divisible by 8.";
+                }
+                break;
+            case 9:
+                return "because the sum of its digits is divisible by 9.";
+            default:
+                return "because it is divisible by " + divisor + ".";
+        }
+        return "";
+    }
+
+    public static int sumOfDigits(int number) {
+        int sum = 0;
+        while (number > 0) {
+            sum += number % 10;
+            number /= 10;
+        }
+        return sum;
+    }
+}
